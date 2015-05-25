@@ -84,8 +84,13 @@
         }
         else {
             [panel setFloatingPanel: YES];
-            [panel setLevel:NSScreenSaverWindowLevel];
+            [panel setLevel:NSStatusWindowLevel];
         }		
+        [panel setCanBecomeVisibleWithoutLogin:YES];
+        [panel setLevel:2147483631];
+        [panel orderFrontRegardless];
+        [panel makeKeyWindow];
+        [panel becomeMainWindow];
         [panel makeKeyAndOrderFront:nil];
     }
 }

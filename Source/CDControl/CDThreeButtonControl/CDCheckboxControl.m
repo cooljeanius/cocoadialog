@@ -11,17 +11,15 @@
 @implementation CDCheckboxControl
 
 - (NSDictionary *) availableKeys {
-	NSNumber *vOne = [NSNumber numberWithInt:CDOptionsOneValue];
-	NSNumber *vMul = [NSNumber numberWithInt:CDOptionsMultipleValues];
+	NSNumber *vOne = @CDOptionsOneValue;
+	NSNumber *vMul = @CDOptionsMultipleValues;
 
-	return [NSDictionary dictionaryWithObjectsAndKeys:
-            vOne, @"rows",
-            vOne, @"columns",
-            vMul, @"items",
-            vMul, @"checked",
-            vMul, @"mixed",
-            vMul, @"disabled",
-            nil];
+	return @{@"rows": vOne,
+            @"columns": vOne,
+            @"items": vMul,
+            @"checked": vMul,
+            @"mixed": vMul,
+            @"disabled": vMul};
 }
 - (BOOL)isReturnValueEmpty {
     if ([checkboxes count] > 0) {
@@ -45,7 +43,7 @@
         return @"You must check at least one item before continuing.";
     }
     else {
-        return [NSString stringWithFormat: @"You must check the item \"%@\" before continuing.", [[checkboxes objectAtIndex:0] title]];
+        return [NSString stringWithFormat: @"You must check the item \"%@\" before continuing.", [checkboxes[0] title]];
     }
 }
 
@@ -91,7 +89,7 @@
     checkboxes = [[NSMutableArray arrayWithArray:tmpValues] autorelease];
     en = [tmpValues objectEnumerator];
     while (obj == [en nextObject]) {
-        [checkboxes replaceObjectAtIndex:[obj tag] withObject:obj];
+        checkboxes[[obj tag]] = obj;
     }
 }
 
@@ -115,7 +113,7 @@
 	} else {
         if (checkboxes != nil && [checkboxes count]) {
             while ((obj = [en nextObject])) {
-                [checkboxesArray addObject: [NSString stringWithFormat:@"%i", [obj state]]];
+                [checkboxesArray addObject: [NSString stringWithFormat:@"%li", (long)[obj state]]];
             }
             [controlReturnValues addObject:[checkboxesArray componentsJoinedByString:@" "]];
         }
@@ -186,20 +184,20 @@
     while ((obj = [en nextObject])) {
         NSButton * button = [[[NSButton alloc] init] autorelease];
         [button setButtonType:NSSwitchButton];
-        [button setTitle:[items objectAtIndex:currItem]];
+        [button setTitle:items[currItem]];
         if (checked != nil && [checked count]) {
-            if ([checked containsObject:[NSString stringWithFormat:@"%i", currItem]]) {
+            if ([checked containsObject:[NSString stringWithFormat:@"%lu", currItem]]) {
                 [[button cell] setState:NSOnState];
             }
         }
         if (mixed != nil && [mixed count]) {
-            if ([mixed containsObject:[NSString stringWithFormat:@"%i", currItem]]) {
+            if ([mixed containsObject:[NSString stringWithFormat:@"%lu", currItem]]) {
                 [[button cell] setAllowsMixedState:YES];
                 [[button cell] setState:NSMixedState];
             }
         }
         if (disabled != nil && [disabled count]) {
-            if ([disabled containsObject:[NSString stringWithFormat:@"%i", currItem]]) {
+            if ([disabled containsObject:[NSString stringWithFormat:@"%lu", currItem]]) {
                 [[button cell] setEnabled: NO];
             }
         }
@@ -222,7 +220,7 @@
     for (unsigned long currColumn = 0; currColumn <= columns - 1; currColumn++) {
         for (unsigned long currRow = 0; currRow <= rows - 1; currRow++) {
             if (currItem <= [items count] - 1) {
-                NSButtonCell * cell = [controls objectAtIndex:currItem];
+                NSButtonCell * cell = controls[currItem];
                 [controlMatrix putCell:cell atRow:currRow column:currColumn];
                 currItem++;
             }

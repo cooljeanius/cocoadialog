@@ -71,50 +71,50 @@
     NSString *relative = @"unknown";
     if (days > 0) {
         if (days > 1) {
-            relative = [NSString stringWithFormat:@"%d days", days];
+            relative = [NSString stringWithFormat:@"%ld days", (long)days];
         }
         else {
-            relative = [NSString stringWithFormat:@"%d day", days];
+            relative = [NSString stringWithFormat:@"%ld day", (long)days];
         }
     }
     else {
         if (hours > 0) {
             if (hours > 1) {
-                relative = [NSString stringWithFormat:@"%d hours", hours];
+                relative = [NSString stringWithFormat:@"%ld hours", (long)hours];
             }
             else {
-                relative = [NSString stringWithFormat:@"%d hour", hours];
+                relative = [NSString stringWithFormat:@"%ld hour", (long)hours];
             }
         }
         else {
             if (minutes > 0) {
                 if (minutes > 1) {
-                    relative = [NSString stringWithFormat:@"%d minutes", minutes];
+                    relative = [NSString stringWithFormat:@"%ld minutes", (long)minutes];
                 }
                 else {
-                    relative = [NSString stringWithFormat:@"%d minute", minutes];
+                    relative = [NSString stringWithFormat:@"%ld minute", (long)minutes];
                 }
             }
             else {
                 if (seconds > 0) {
                     if (seconds > 1) {
-                        relative = [NSString stringWithFormat:@"%d seconds", seconds];
+                        relative = [NSString stringWithFormat:@"%ld seconds", (long)seconds];
                     }
                     else {
-                        relative = [NSString stringWithFormat:@"%d second", seconds];
+                        relative = [NSString stringWithFormat:@"%ld second", (long)seconds];
                     }
                 }
             }
         }
     }
-    returnString = [returnString stringByReplacingOccurrencesOfString:@"%s" withString:[NSString stringWithFormat:@"%d", seconds]];
-    returnString = [returnString stringByReplacingOccurrencesOfString:@"%m" withString:[NSString stringWithFormat:@"%d", minutes]];
-    returnString = [returnString stringByReplacingOccurrencesOfString:@"%h" withString:[NSString stringWithFormat:@"%d", hours]];
-    returnString = [returnString stringByReplacingOccurrencesOfString:@"%d" withString:[NSString stringWithFormat:@"%d", days]];
+    returnString = [returnString stringByReplacingOccurrencesOfString:@"%s" withString:[NSString stringWithFormat:@"%ld", (long)seconds]];
+    returnString = [returnString stringByReplacingOccurrencesOfString:@"%m" withString:[NSString stringWithFormat:@"%ld", (long)minutes]];
+    returnString = [returnString stringByReplacingOccurrencesOfString:@"%h" withString:[NSString stringWithFormat:@"%ld", (long)hours]];
+    returnString = [returnString stringByReplacingOccurrencesOfString:@"%d" withString:[NSString stringWithFormat:@"%ld", (long)days]];
     returnString = [returnString stringByReplacingOccurrencesOfString:@"%r" withString:relative];
     return returnString;
 }
-- (id)initWithOptions:(CDOptions *)opts {
+- (instancetype)initWithOptions:(CDOptions *)opts {
 	self = [super initWithOptions:opts];
     controlExitStatus = -1;
     controlExitStatusString = nil;
@@ -293,12 +293,12 @@
         NSFileHandle *fh = [NSFileHandle fileHandleWithStandardOutput];
         for (i = 0; i < [controlReturnValues count]; i++) {
             if (fh) {
-                [fh writeData:[[controlReturnValues objectAtIndex:i] dataUsingEncoding:NSUTF8StringEncoding]];
+                [fh writeData:[controlReturnValues[i] dataUsingEncoding:NSUTF8StringEncoding]];
             }
             if (![options hasOpt:@"no-newline"] || i+1 < [controlReturnValues count])
             {
                 if (fh) {
-                    [fh writeData:[[NSString stringWithString:@"\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+                    [fh writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
                 }
             }
         }
@@ -316,35 +316,32 @@
 - (BOOL) validateOptions { return YES; }
 - (NSDictionary *) depreciatedKeys {return nil;}
 - (NSDictionary *) globalAvailableKeys {
-    NSNumber *vOne = [NSNumber numberWithInt:CDOptionsOneValue];
-	NSNumber *vNone = [NSNumber numberWithInt:CDOptionsNoValues];
-    return [NSDictionary dictionaryWithObjectsAndKeys:
-            // General
-            vNone, @"help",
-            vNone, @"debug",
-            vNone, @"quiet",
-            vOne,  @"timeout",
-            vOne,  @"timeout-format",
-            vNone, @"string-output",
-            vNone, @"no-newline",
+    NSNumber *vOne = @CDOptionsOneValue;
+	NSNumber *vNone = @CDOptionsNoValues;
+    return @{@"help": vNone,
+            @"debug": vNone,
+            @"quiet": vNone,
+            @"timeout": vOne,
+            @"timeout-format": vOne,
+            @"string-output": vNone,
+            @"no-newline": vNone,
             // Panel
-            vOne,  @"title",
-            vOne,  @"width",
-            vOne,  @"height",
-            vOne,  @"posX",
-            vOne,  @"posY",
-            vNone, @"no-float",
-            vNone, @"minimize",
-            vNone, @"resize",
+            @"title": vOne,
+            @"width": vOne,
+            @"height": vOne,
+            @"posX": vOne,
+            @"posY": vOne,
+            @"no-float": vNone,
+            @"minimize": vNone,
+            @"resize": vNone,
             // Icon
-            vOne,  @"icon",
-            vOne,  @"icon-bundle",
-            vOne,  @"icon-type",
-            vOne,  @"icon-file",
-            vOne,  @"icon-size",
-            vOne,  @"icon-width",
-            vOne,  @"icon-height",
-            nil];
+            @"icon": vOne,
+            @"icon-bundle": vOne,
+            @"icon-type": vOne,
+            @"icon-file": vOne,
+            @"icon-size": vOne,
+            @"icon-width": vOne,
+            @"icon-height": vOne};
 }
 - (BOOL) validateControl:(CDOptions *)options {return YES;}
 

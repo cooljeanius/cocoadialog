@@ -29,33 +29,29 @@
 
 - (NSDictionary *) availableKeys
 {
-	NSNumber *vOne = [NSNumber numberWithInt:CDOptionsOneValue];
-	NSNumber *vNone = [NSNumber numberWithInt:CDOptionsNoValues];
+	NSNumber *vOne = @CDOptionsOneValue;
+	NSNumber *vNone = @CDOptionsNoValues;
 	
-	return [NSDictionary dictionaryWithObjectsAndKeys:
-            vOne, @"label",
-            vOne, @"text",
-            vOne, @"text-from-file",
-            vNone, @"editable",
-            vNone, @"no-editable",
-            vNone, @"selected",
-            vNone, @"focus-textbox",
-            vOne, @"scroll-to",
-            nil];
+	return @{@"label": vOne,
+            @"text": vOne,
+            @"text-from-file": vOne,
+            @"editable": vNone,
+            @"no-editable": vNone,
+            @"selected": vNone,
+            @"focus-textbox": vNone,
+            @"scroll-to": vOne};
 }
 
 - (NSDictionary *) depreciatedKeys
 {
-	return [NSDictionary dictionaryWithObjectsAndKeys:
-            @"label", @"informative-text",
-            nil];
+	return @{@"informative-text": @"label"};
 }
 
 // Should be called after setButtons, and before resize
 - (void) setLabel:(NSString *)labelText {
     if (expandingLabel != nil) {
         if (labelText == nil) {
-            labelText = [NSString stringWithString:@""];
+            labelText = @"";
         }
         float labelNewHeight = -10.0f;
         NSRect labelRect = [expandingLabel frame];

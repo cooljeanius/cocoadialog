@@ -26,23 +26,19 @@
 
 - (NSDictionary *) availableKeys
 {
-    NSNumber *vOne = [NSNumber numberWithInt:CDOptionsOneValue];
-	NSNumber *vNone = [NSNumber numberWithInt:CDOptionsNoValues];
-	NSNumber *vMul = [NSNumber numberWithInt:CDOptionsMultipleValues];
+    NSNumber *vOne = @CDOptionsOneValue;
+	NSNumber *vNone = @CDOptionsNoValues;
+	NSNumber *vMul = @CDOptionsMultipleValues;
 
-	return [NSDictionary dictionaryWithObjectsAndKeys:
-		vMul,   @"items",
-        vOne,   @"selected",
-		vNone,  @"exit-onchange",
-		vNone,  @"pulldown",
-		nil];
+	return @{@"items": vMul,
+        @"selected": vOne,
+		@"exit-onchange": vNone,
+		@"pulldown": vNone};
 }
 
 - (NSDictionary *) depreciatedKeys
 {
-	return [NSDictionary dictionaryWithObjectsAndKeys:
-            @"label", @"text",
-            nil];
+	return @{@"text": @"label"};
 }
 
 - (BOOL) validateOptions {
@@ -114,7 +110,7 @@
 	if ([[self options] hasOpt:@"string-output"]) {
         [controlReturnValues addObject:[popupControl titleOfSelectedItem]];
 	} else {
-        [controlReturnValues addObject:[NSString stringWithFormat:@"%d", [popupControl indexOfSelectedItem]]];
+        [controlReturnValues addObject:[NSString stringWithFormat:@"%ld", (long)[popupControl indexOfSelectedItem]]];
 	}
     [super controlHasFinished:button];
 }
@@ -127,7 +123,7 @@
         if ([[self options] hasOpt:@"string-output"]) {
             [controlReturnValues addObject:[popupControl titleOfSelectedItem]];
         } else {
-            [controlReturnValues addObject:[NSString stringWithFormat:@"%d", [popupControl indexOfSelectedItem]]];
+            [controlReturnValues addObject:[NSString stringWithFormat:@"%ld", (long)[popupControl indexOfSelectedItem]]];
         }
         [self stopControl];
 	}
