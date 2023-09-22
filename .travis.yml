@@ -7,6 +7,7 @@ xcode_sdk: macosx10.13
 before_install:
   - export PATH="/usr/local/bin:$PATH" # Homebrew's bin path isn't top priority, make it so.
   - export HOMEBREW_NO_EMOJI=1 HOMEBREW_BOOTSNAP=1 HOMEBREW_CURL_VERBOSE=1 HOMEBREW_VERBOSE=1 HOMEBREW_VERBOSE_USING_DOTS=1
+  - export GIT_CURL_VERBOSE=1 && env | sort | uniq
   - which -a brew && brew update -v --auto-update # Ensure Homebrew is up to date.
 
 install:
