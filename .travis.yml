@@ -6,7 +6,7 @@ xcode_sdk: macosx10.13
 
 before_install:
   - export PATH="/usr/local/bin:$PATH" # Homebrew's bin path isn't top priority, make it so.
-  - which -a brew && brew --help && brew update # Ensure Homebrew is up to date.
+  - which -a brew && brew update -v --auto-update # Ensure Homebrew is up to date.
 
 install:
   - brew outdated xctool || brew upgrade xctool # Ensure xctool is up to date.
