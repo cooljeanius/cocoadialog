@@ -28,6 +28,3 @@ jobs:
       if: "${{ success() }}"
     - run: if test -x "`which brew`"; then brew --help; else echo "No usable brew available!"; fi
       if: "${{ failure() }}"
-    - uses: rtCamp/action-slack-notify@v2.2.1
-      env:
-        SLACK_WEBHOOK: "${{ secrets.SLACK_WEBHOOK }}"
