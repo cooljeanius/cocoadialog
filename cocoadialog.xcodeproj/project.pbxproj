@@ -79,6 +79,7 @@
 		61EC90EC145FB0A0003ADF05 /* CDSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 61EC90EA145FB0A0003ADF05 /* CDSlider.h */; };
 		61EC90ED145FB0A0003ADF05 /* CDSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 61EC90EB145FB0A0003ADF05 /* CDSlider.m */; };
 		61FA9D2114518E97006E0674 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 61FA9D2014518E97006E0674 /* dsa_pub.pem */; };
+		6E8E9CABFC8D691530C44DEC /* libPods-cocoadialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B55524D0F42E016EF21BC5 /* libPods-cocoadialog.a */; };
 		A55A2F481645D3FD00FB8C6E /* CocoaDialog.pl in Resources */ = {isa = PBXBuildFile; fileRef = A55A2F471645D3FD00FB8C6E /* CocoaDialog.pl */; };
 		A78A8CD414376C42007AE363 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A78A8CB5143759ED007AE363 /* InfoPlist.strings */; };
 		A78A8CD514376C42007AE363 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A78A8CB7143759ED007AE363 /* MainMenu.xib */; };
@@ -120,6 +121,7 @@
 		0E71DA0A0963B19500FF6F7C /* cocoadialog.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = cocoadialog.icns; path = Resources/cocoadialog.icns; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		48B55524D0F42E016EF21BC5 /* libPods-cocoadialog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cocoadialog.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6187E60014664988005067DB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61EC906B145FACF8003ADF05 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = Source/AppController.h; sourceTree = "<group>"; };
 		61EC906C145FACF8003ADF05 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = Source/AppController.m; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		61EC90EA145FB0A0003ADF05 /* CDSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDSlider.h; sourceTree = "<group>"; };
 		61EC90EB145FB0A0003ADF05 /* CDSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDSlider.m; sourceTree = "<group>"; };
 		61FA9D2014518E97006E0674 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = Resources/dsa_pub.pem; sourceTree = "<group>"; };
+		67D168D48F7D1841471E2EF8 /* Pods-cocoadialog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocoadialog.debug.xcconfig"; path = "Target Support Files/Pods-cocoadialog/Pods-cocoadialog.debug.xcconfig"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* cocoadialog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocoadialog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55A2F471645D3FD00FB8C6E /* CocoaDialog.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = CocoaDialog.pl; sourceTree = "<group>"; };
 		A78A8C9514375704007AE363 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -207,6 +210,7 @@
 		A7BABB051445810000D3F168 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		A7BABB2E1445817B00D3F168 /* relaunch */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = relaunch; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D40437153C2BC3005FA3CD /* en-US */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "en-US"; path = "Resources/en-US.lproj/popup.xib"; sourceTree = "<group>"; };
+		B2C0BCB6B4F4A709B648CED5 /* Pods-cocoadialog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocoadialog.release.xcconfig"; path = "Target Support Files/Pods-cocoadialog/Pods-cocoadialog.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,7 @@
 				61C9A9D314665F680054DD91 /* Cocoa.framework in Frameworks */,
 				6190D1D8146CAFB30083364D /* Growl.framework in Frameworks */,
 				61C9A9D214665F680054DD91 /* Sparkle.framework in Frameworks */,
+				6E8E9CABFC8D691530C44DEC /* libPods-cocoadialog.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +258,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* cocoaDialog */ = {
+		29B97314FDCFA39411CA2CEA = {
 			isa = PBXGroup;
 			children = (
 				A78A8CDF14377610007AE363 /* LICENSE */,
@@ -263,6 +268,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				6187E60D146651CA005067DB /* Source */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				F72ACB3EE0AE6D479E404328 /* Pods */,
 			);
 			name = cocoaDialog;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 				A78A8CE8143784A8007AE363 /* Growl.framework */,
 				A78A8D2E1437AC29007AE363 /* Sparkle.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Apple Frameworks */,
+				48B55524D0F42E016EF21BC5 /* libPods-cocoadialog.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -426,6 +433,16 @@
 			path = Configurations;
 			sourceTree = "<group>";
 		};
+		F72ACB3EE0AE6D479E404328 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67D168D48F7D1841471E2EF8 /* Pods-cocoadialog.debug.xcconfig */,
+				B2C0BCB6B4F4A709B648CED5 /* Pods-cocoadialog.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -475,6 +492,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E77E99F0963C37C00D651A3 /* Build configuration list for PBXNativeTarget "cocoadialog" */;
 			buildPhases = (
+				1597346D08CF67CD2ABB7EC4 /* [CP] Check Pods Manifest.lock */,
 				8D1107270486CEB800E47090 /* Headers */,
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -526,7 +544,8 @@
 				"en-US",
 				Base,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* cocoaDialog */;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
+			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -560,6 +579,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1597346D08CF67CD2ABB7EC4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cocoadialog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A7D4043E153C38E0005FA3CD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
