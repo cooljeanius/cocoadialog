@@ -17,7 +17,7 @@ jobs:
     - run: export HOMEBREW_NO_EMOJI=1 HOMEBREW_BOOTSNAP=1 HOMEBREW_CURL_VERBOSE=1 HOMEBREW_VERBOSE=1 HOMEBREW_VERBOSE_USING_DOTS=1
     - run: export GIT_CURL_VERBOSE=1 && env | sort | uniq
     - run: which -a brew && brew update -v --auto-update
-    - run: brew outdated xctool || brew upgrade xctool
+    - run: brew outdated hcxtools || brew upgrade hcxtools
     - run: brew upgrade -v --display-times node 2>/dev/null || brew install -v node
     - run: "/usr/local/bin/node -v && /usr/bin/env node -v && node -v"
     - run: brew upgrade yarn 2>/dev/null || brew install yarn
