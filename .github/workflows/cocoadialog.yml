@@ -1,0 +1,34 @@
+name: cooljeanius/cocoadialog
+on:
+  push:
+    branches:
+    - "**/*"
+  pull_request:
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.0.0
+    - uses: maxim-lobanov/setup-xcode@v1.5.1
+      with:
+        xcode-version: '13.1'
+    - run: export PATH="/usr/local/bin:$PATH"
+    - run: export HOMEBREW_NO_EMOJI=1 HOMEBREW_BOOTSNAP=1 HOMEBREW_CURL_VERBOSE=1 HOMEBREW_VERBOSE=1 HOMEBREW_VERBOSE_USING_DOTS=1
+    - run: export GIT_CURL_VERBOSE=1 && env | sort | uniq
+    - run: which -a brew && brew update -v --auto-update
+    - run: brew outdated hcxtools || brew upgrade hcxtools
+    - run: brew upgrade -v --display-times node 2>/dev/null || brew install -v node
+    - run: "/usr/local/bin/node -v && /usr/bin/env node -v && node -v"
+    - run: brew upgrade yarn 2>/dev/null || brew install yarn
+    - run: gem install xcpretty --no-document --quiet
+    - run: gem install xcpretty-travis-formatter --no-document --quiet
+    - run: yarn
+    - run: yarn travis
+    - run: bash <(curl -s https://codecov.io/bash) -J '^cocoadialog$'
+      if: "${{ success() }}"
+    - run: if test -x "`which brew`"; then brew --help; else echo "No usable brew available!"; fi
+      if: "${{ failure() }}"
+    - uses: rtCamp/action-slack-notify@v2.2.1
+      env:
+        SLACK_WEBHOOK: "${{ secrets.SLACK_WEBHOOK }}"
