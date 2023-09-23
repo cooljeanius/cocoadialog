@@ -26,7 +26,7 @@
   "dependencies": {
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
-    "dot-prop": "^4.2.0",
+    "dot-prop": "^4.2.1",
     "execa": "^0.8.0",
     "get-stream": "^3.0.0",
     "nanoseconds": "^0.1.0",
