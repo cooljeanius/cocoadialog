@@ -11,6 +11,7 @@ before_install:
   - which -a brew && brew update -v --auto-update # Ensure Homebrew is up to date.
 
 install:
+  - brew install ca-certificates
   - brew outdated xctool || brew upgrade xctool # Ensure xctool is up to date.
   - brew upgrade -v --display-times node 2>/dev/null || brew install -v node # Upgrade or install to latest Node.js.
   - /usr/local/bin/node -v && /usr/bin/env node -v && node -v # Verify they're all the same version.
