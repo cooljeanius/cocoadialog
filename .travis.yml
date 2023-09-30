@@ -4,6 +4,15 @@ osx_image: xcode11.3
 xcode_workspace: cocoadialog.xcworkspace
 xcode_sdk: macosx10.13
 
+cache:
+  bundler: true
+  cocoapods: true
+  yarn: true
+
+env:
+  global:
+    - MAKEFLAGS="-j2"
+
 before_install:
   - export PATH="/usr/local/bin:$PATH" # Homebrew's bin path isn't top priority, make it so.
   - export HOMEBREW_NO_EMOJI=1 HOMEBREW_BOOTSNAP=1 HOMEBREW_CURL_VERBOSE=1 HOMEBREW_VERBOSE=1 HOMEBREW_VERBOSE_USING_DOTS=1
