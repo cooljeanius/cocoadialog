@@ -28,7 +28,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "dot-prop": "^4.2.1",
     "execa": "^0.8.0",
-    "get-stream": "^3.0.0",
+    "get-stream": "^8.0.1",
     "nanoseconds": "^1.0.1",
     "semver-utils": "^1.1.4",
     "shortid": "^2.2.16",
