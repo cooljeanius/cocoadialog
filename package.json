@@ -27,7 +27,7 @@
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "dot-prop": "^4.2.1",
-    "execa": "^0.8.0",
+    "execa": "^9.1.0",
     "get-stream": "^9.0.1",
     "nanoseconds": "^1.0.1",
     "semver-utils": "^1.1.4",
