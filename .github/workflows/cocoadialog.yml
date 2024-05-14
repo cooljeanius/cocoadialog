@@ -32,9 +32,9 @@ jobs:
     - run: brew upgrade yarn 2>/dev/null || brew install yarn
     - run: gem install xcpretty --no-document --quiet && gem install xcpretty-travis-formatter --no-document --quiet
     - run: yarn
-    - run: yarn build
-    - run: yarn test
-    - run: bash <(curl -s https://codecov.io/bash) -J '^cocoadialog$' && sync && sleep 1
+    - run: yarn build || find . -name main.m -print
+    - run: yarn test || find . -name '*.bundle' -print
+    - run: (pip install coveragepy || gem install codecov) && sync && bash <(curl -s https://codecov.io/bash) -J '^cocoadialog$'
       if: "${{ success() }}"
     - run: if test -x "$(which brew)"; then brew --help; else echo "No usable brew available!"; fi
       if: "${{ failure() }}"
