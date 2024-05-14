@@ -36,5 +36,5 @@ jobs:
     - run: yarn test
     - run: bash <(curl -s https://codecov.io/bash) -J '^cocoadialog$'
       if: "${{ success() }}"
-    - run: if test -x "`which brew`"; then brew --help; else echo "No usable brew available!"; fi
+    - run: if test -x "$(which brew)"; then brew --help; else echo "No usable brew available!"; fi
       if: "${{ failure() }}"
