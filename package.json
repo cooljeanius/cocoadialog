@@ -24,7 +24,7 @@
     "update-version": "./Scripts/update-version.js"
   },
   "dependencies": {
-    "commitizen": "^4.3.0",
+    "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "dot-prop": "^4.2.1",
     "execa": "^0.8.0",
