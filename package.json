@@ -31,7 +31,7 @@
     "get-stream": "^9.0.1",
     "nanoseconds": "^1.0.1",
     "semver-utils": "^1.1.4",
-    "shortid": "^2.2.16",
+    "shortid": "^2.2.17",
     "simple-plist": "^1.3.1"
   }
 }
