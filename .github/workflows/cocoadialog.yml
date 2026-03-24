@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v6
-    - uses: maxim-lobanov/setup-xcode@v1.6.0
+    - uses: maxim-lobanov/setup-xcode@v1.7.0
       with:
         xcode-version: '26.1.1'
     - run: export PATH="/usr/local/bin:$PATH" && export HOMEBREW_NO_EMOJI=1 HOMEBREW_BOOTSNAP=1 HOMEBREW_CURL_VERBOSE=1 HOMEBREW_VERBOSE=1 HOMEBREW_VERBOSE_USING_DOTS=1 && export GIT_CURL_VERBOSE=1 && sync && (env | uniq | sort | uniq | tee .env.local) && sync && sleep 1
